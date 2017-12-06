@@ -242,7 +242,7 @@ def problem0b(n):
     for k in range(n):
         if is_prime(True):
             count = count + 1
-        
+
     return count
 
 
