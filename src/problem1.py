@@ -362,7 +362,7 @@ def problem1c(n):
     for k in range (n - 1):
         x = k + 2
         if is_prime(x) == True:
-            total = total + x
+            total = total * x
 
     return sum_of_digits(total)
 
