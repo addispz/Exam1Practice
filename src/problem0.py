@@ -147,7 +147,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -165,14 +165,11 @@ def problem0a(n):
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
 
-    add = sum_of_digits(n)
-    if add % 2 == 0:
-        print('False')
+    if sum_of_digits(n) % 2 == 0:
+        return False
 
-    if add % 2 == 1:
-        print('True')
-
-    return
+    else:
+        return True
 
 
 def run_test_problem0b():
@@ -228,7 +225,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -239,8 +236,8 @@ def problem0b(n):
     # ------------------------------------------------------------------
 
     count = 0
-    for k in range(n):
-        if is_prime(True):
+    for k in range(n - 1):
+        if is_prime(k + 2) == True:
             count = count + 1
 
     return count
@@ -303,7 +300,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -312,8 +309,21 @@ def problem0c(circle, n, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    circle.attach_to(window)
+    window.render(0.5)
+
+    r = circle.radius
+
+    for k in range(n):
+        center = rg.Point((circle.center.x + (r * 2 *(k+1))), circle.center.y)
+
+        circles = rg.Circle(center, r)
+        circles.attach_to(window)
+        window.render(0.5)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
