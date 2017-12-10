@@ -164,7 +164,7 @@ def problem3a(window, point, n):
 
     for k in range(n):
         begin = rg.Point(point.x + (k * 20), point.y + (k * 10))
-        end = rg.Point(point.x + (k * 20), point.y + ((k * 10) - 50))
+        end = rg.Point(point.x + (k * 20), point.y + ((k * 10) + 50))
 
         line = rg.Line(begin, end)
 
